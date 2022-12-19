@@ -1,8 +1,9 @@
-# open the file
-with open('input.txt', 'r') as f:
+# open the file in the folder day1
+# with relative path
+with open('example.txt', 'r') as f:
     # read the file
     lines = f.readlines()
-
+    
 # initialize the total and the list of highest totals
 total = 0
 highest_totals = []
