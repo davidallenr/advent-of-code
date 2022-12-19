@@ -6,8 +6,10 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 
 To run a solution, navigate to the directory for the corresponding year and run the Python script for the desired day. For example:
 
+```sh
 $ cd 2021
-$ python day1_completed.py
+$ python day1.py
+```
 
 Copy code
 
