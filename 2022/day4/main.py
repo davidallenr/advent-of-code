@@ -17,15 +17,11 @@ def return_intersection_of_sets_from_file(filename):
       sets.append(set(range(int(lower), int(upper)+1)))
       
     try:
-      if sets[0].issubset(sets[1]) or sets[1].issubset(sets[0]):
+      if sets[0].intersection(sets[1]) or sets[1].intersection(sets[0]):
         count_of_sets_containing_eachother += 1
     except:
       pass
   
-
-
-  
-
   return count_of_sets_containing_eachother
 
 # Test the function with the example data
