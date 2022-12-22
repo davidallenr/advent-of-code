@@ -14,11 +14,24 @@ def split_string(string) -> list:
     return result
 
 def move_boxes(count, from_pos, to_pos, crates_stack):
-    for _ in range(count):
-        # remove the top box from stack 'from_pos'
-        box = crates_stack[from_pos].pop()
-        # add the box to the top of stack 'to_pos'
-        crates_stack[to_pos].append(box)
+    if(count == 1):
+        for _ in range(count):
+            # remove the top box from stack 'from_pos'
+            box = crates_stack[from_pos].pop()
+            # add the box to the top of stack 'to_pos'
+            crates_stack[to_pos].append(box)
+    else:
+        # move multiple boxes from stack 'from_pos' to stack 'to_pos'
+        boxes = []
+        for _ in range(count):
+            #remove mulitple boxes from stack 'from_pos'
+            boxes.append(crates_stack[from_pos].pop())
+
+        #reverse the order of the boxes
+        boxes.reverse()
+        for box in boxes:
+            crates_stack[to_pos].append(box)   
+            
 
 
 
@@ -32,7 +45,7 @@ def move_boxes_with_crane(filename):
         move_lines = [line.split(" ") for line in move_lines]
 
     indexes = []
-    for i in enumerate(crates_lines[count_of_stacks-1]):
+    for i in enumerate(crates_lines[count_of_stacks - 1]):
         #if the value at the index is not a space
         if i[1] != " ":
             indexes.append(i[0])
